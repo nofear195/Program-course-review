@@ -1,8 +1,8 @@
-##Number type
+## Number type
 [reference](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Number)
 1. `Number(string)`: 字串轉數字
 2. `.toString()`: 數字轉字串
-    eg. a.toString or 用 (a + '')轉字串
+    eg. a.toString or 用 (a + '') 轉字串
 3. `parseInt(string,index)`: 解析成整數 +index(表進位，default 10進位)，為 optional)
 4. `parseFloat(float number)`: 解析成浮點數
 5. `numObj.toFixed([digits])`: 取到小數點下幾位數(digits)，四捨五入
@@ -13,10 +13,10 @@
 10. `Math.max() `: 回傳最大值
 11. `Math.min() `: 回傳最小值
 12. `Math.pow(base, exponent)`: 開次方
-13. `Math.random()`: 產生 0~1 區間的隨機數(含 0 ，不含 1)
-    eg. `Math.floor((Math.random()*10+1))`: 產生 1~10的隨機數
----
-##String type
+13. `Math.random()`: 產生 0-1 區間的隨機數(含 0 ，不含 1)
+    eg. `Math.floor((Math.random()*10+1))`: 產生 1-10的隨機數  
+***
+## String type
 [reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
 1. `toLowerCase()`: 字串變小寫
 2. `toUpperCase()`: 字串變大寫
