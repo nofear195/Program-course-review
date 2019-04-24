@@ -54,6 +54,8 @@
 ## Array type
 [Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 1. `arr.join([separator])`: 將陣列中的每個元素間的空格用 separator 隔開，default:","，回傳型態為"字串"
+2. `arr.push()`: 將一個或多個元素加入陣列尾端
+3. `arr.pop()`: 移除陣列最後一個元素
 2. `var new_array = arr.map(function)`: 將陣列元素帶入自訂的 function，回傳至新的陣列中
    * map 含有 immutable 機制，不更改原有陣列，所以要新增陣列放置運算後的元素
    * 可無限接續 .map(function)
@@ -66,13 +68,15 @@
    * 常用
 5. `arr.reduce(callback function, initialValue)`:將 accumulater 及陣列中每項元素(由左至右)傳入 callback function，將陣列化為單一值
    * callback function[accumulater, currentValue]
-     1. accumulater(累加器): 累積函式傳回值
+     1. accumulater(累加器): 累積函式傳回值或狀態
      2. currentValue: 目前處理的元素
+
      ```JavaScript
      var sum = [0, 1, 2, 3].reduce(function (acc ,cur) {
      return acc + cur;
      }, 0); // sum=6
      ```
+   * 常用
 6. `arr.slice([begin[, end]])`: 提取陣列中的元素
    * begin: 開始提取index處，default:0，可用負數代表從尾項開始，為 optional
    * end: 到 index 前停止提取，不含本身 index，default:最後項，可用負數代表從尾項開始，為 optional
