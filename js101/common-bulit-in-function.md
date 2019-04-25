@@ -113,7 +113,7 @@
       // or可寫成 return a-b ? 1 : -1
     }
     function compare2(a ,b) {return a - b;} //直接回傳值讓電腦判斷正負
-   ```
+    ```
 11. `Array(a).fill(b)`:產生 a 個元素的陣列，將陣列每個元素都填 b
 12. `Array.isArray(value)` : 判斷 value 是否為 Array
     * 回傳值為 true，則 value 為 Array，否則為 false
