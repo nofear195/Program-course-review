@@ -48,7 +48,8 @@
    * limt: 切到第幾串
    * 常用。方便處理字串
 9. `str.trim()`: 去掉字串前後空格，不影響源自串
-10. `str.length`: 字串長度，可如同 array 存取第幾個字串，str\[i\]
+10. `str.length`: 字串長度，可如同 array 存取第幾個字串，str[i]
+11. `str.repeat(count)`: 增加字串內容幾次
 ***
 
 ## Array type
@@ -56,18 +57,26 @@
 1. `arr.join([separator])`: 將陣列中的每個元素間的空格用 separator 隔開，default:","，回傳型態為"字串"
 2. `arr.push()`: 將一個或多個元素加入陣列尾端
 3. `arr.pop()`: 移除陣列最後一個元素
-2. `var new_array = arr.map(function)`: 將陣列元素帶入自訂的 function，回傳至新的陣列中
+4. `var new_array = arr.map(callback function)`: 將陣列元素帶入自訂的 function，回傳至新的陣列中
+   * `callback function (currentValue, index, array) {}`
+     1. currentValue: 原陣列目前所處理的元素
+     2. index: 原陣列目前所處理的元素的索引，為 optional
+     3. array: 呼叫 filter的陣列，為 optional
    * map 含有 immutable 機制，不更改原有陣列，所以要新增陣列放置運算後的元素
    * 可無限接續 .map(function)
    * 常用
-3. `arr.forEach(function)`: 將陣列元素帶入自訂的 function，不用回傳
-4. `var new_array = arr.fliter(function)`: 將陣列元素帶入自訂的 function，過濾回傳值
-   * 若回傳值為 true (>0)，則保留元素至新的陣列
-   * 若回傳值為 false (<=0)，則不保留
-   * 可無限接續 .fliter(function)
+5. `arr.forEach(function)`: 將陣列元素帶入自訂的 function，不用回傳
+6. `var new_array = arr.filter(callback function)`: 將陣列元素帶入自訂的 function，過濾回傳值
+   * `callback function (element, index, array) {}`
+     1. element: 原陣列目前所處理的元素
+     2. index: 原陣列目前所處理的元素的索引，為 optional
+     3. array: 呼叫 filter的陣列，為 optional
+     4. 若回傳值為 true (>0)，則保留元素至新的陣列
+     5. 若回傳值為 false (<=0)，則不保留元素
+   * 可無限接續 .filter
    * 常用
-5. `arr.reduce(callback function, initialValue)`:將 accumulater 及陣列中每項元素(由左至右)傳入 callback function，將陣列化為單一值
-   * callback function[accumulater, currentValue]
+7. `arr.reduce(callback function, initialValue)`:將 accumulater 及陣列中每項元素(由左至右)傳入 callback function，將陣列化為單一值
+   * `callback function (accumulater, currentValue) {}`
      1. accumulater(累加器): 累積函式傳回值或狀態
      2. currentValue: 目前處理的元素
 
@@ -77,31 +86,34 @@
      }, 0); // sum=6
      ```
    * 常用
-6. `arr.slice([begin[, end]])`: 提取陣列中的元素
+8. `arr.slice([begin[, end]])`: 提取陣列中的元素
    * begin: 開始提取index處，default:0，可用負數代表從尾項開始，為 optional
    * end: 到 index 前停止提取，不含本身 index，default:最後項，可用負數代表從尾項開始，為 optional
    * eg. arr.slice(2)，從第三個元素開始提取後面全部
    * eg. arr.slice(2,-1)，從第三個元素提取直到最後二個元素
-7. `arr.splice(start[, deleteCount[, item1[, item2[, ...]]]])`: 藉由加入新元素、刪除既有元素、刪除既有元素並插入新元素來改變陣列內容
+9. `arr.splice(start[, deleteCount[, item1[, item2[, ...]]]])`: 藉由加入新元素、刪除既有元素、刪除既有元素並插入新元素來改變陣列內容
    * 改變原本陣列
    * start: 開始更動index處，default:0，可用負數代表從尾項開始
    * deleteCount: 0 表示加入，省略表示從 start 開始到陣列中最後一個元素都會被刪除，為 optional
    * item1, item2, ...: 從 start 開始，要加入到陣列的元素，省略表示從 start 開始到陣列中最後一個元素都會被刪除，為 optional
-8. `arr.sort([compareFunction])`: 排序
-   * default 依陣列第一個元素其字串的 Unicode 編碼位置排序
-   * compareFunction: 指定一個函式來定義排序，為 optional
-   ```JavaScript
-   var month = ['March','Jan','Feb','Dec'];
-   month.sot(); // output: Array ['Dec','Feb','Jan','March'];
-   var array1 = [1, 30, 4, 21, 10000];
-   array1.sot(); // output: Array [1, 10000, 21, 30, 4];
-   // 範例: 目的由小至大
-   //compareFunction(a, b)， 表示原始位置 a 在前面，b 在後面
-   function compare1(a, b) {
-     if (a === b) return 0;
-     if (a > b) return  1; //return >0 (正數) 交換位置
-     if (a < b) return -1; //return <0 (負數)不換位置
-     // or可寫成 return a-b ? 1 : -1
-   }
-   function compare2(a ,b) {return a - b;} //直接回傳值讓電腦判斷正負
+10. `arr.sort([compareFunction])`: 排序
+    * default 依陣列第一個元素其字串的 Unicode 編碼位置排序
+    * compareFunction: 指定一個函式來定義排序，為 optional
+    ```JavaScript
+    var month = ['March','Jan','Feb','Dec'];
+    month.sot(); // output: Array ['Dec','Feb','Jan','March'];
+    var array1 = [1, 30, 4, 21, 10000];
+    array1.sot(); // output: Array [1, 10000, 21, 30, 4];
+    // 範例: 目的由小至大
+    //compareFunction(a, b)， 表示原始位置 a 在前面，b 在後面
+    function compare1(a, b) {
+      if (a === b) return 0;
+      if (a > b) return  1; //return >0 (正數) 交換位置
+      if (a < b) return -1; //return <0 (負數)不換位置
+      // or可寫成 return a-b ? 1 : -1
+    }
+    function compare2(a ,b) {return a - b;} //直接回傳值讓電腦判斷正負
    ```
+11. `Array(a).fill(b)`:產生 a 個元素的陣列，將陣列每個元素都填 b
+12. `Array.isArray(value)` : 判斷 value 是否為 Array
+    * 回傳值為 true，則 value 為 Array，否則為 false
