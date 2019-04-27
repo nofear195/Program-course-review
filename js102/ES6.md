@@ -159,4 +159,4 @@ import add, {PI} from './utils' | export default function add(a, b) { return a+b
     3. 填入內容，告訴 babel 要用這個 preset:`{ "presets":["@babel/preset-env"]}`
     4. 這些都要放在根目錄底下，與 package.json 同層
     4. 最後使用 `npx babel-node 檔案名` 即可
-11. jkljklfd
+11. JS102 總結: nodularize、test、ES6
