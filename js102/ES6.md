@@ -5,13 +5,14 @@
 ***
 
 ## ES6 新增的語法
+[ES6 新增的語法](https://github.com/DrkSephy/es6-cheatsheet)
 1. `let / const`: 宣告變數
    * 用法與原 var 一樣
    * const (constant): 常數，用在不想改變的值，只有用物件可以改值
    * Scoope (作用域): 變數可取嗽的範圍
    * var 的 Scoope 為最近的一個 function(){}內
    * let 與 const 的 Scoope 為最近的一個 block {}內
-   * 盡量用 let 取代 var，let Scoope 範圍較小可避免 Scoope 互相干擾
+   * 盡量用 let 取代 var，let Scoope 範圍較小可避免 Scoope 互相干擾，常用
 2. `Template literals`: 取代字串使用上的不便，eg:字串拼接(+)
    * 使用 `` 取代 '' 與 "":可用於一般字串，也可直接用於多行字串，不用拼接
    * `${變數 or 程式碼}`: 省去用字串拼接，直接內嵌進去字串
@@ -124,17 +125,17 @@ arr.filter(value => value > 1) // 用於單純回傳一個值
 // 左: index.js ,右: utils.js
 // ES5
 var add = require('./utils') | function add(a, b) { return a+b}
-
+                             |
 console.log(add(3,5));       | module.exports = add;
 // ES6
 // export 與 inport {}，兩者成對使用
 import {add, PI} from './utils'  | export function add(a, b) { return a+b}
-
+                                 |
 console.log(add(3,5), PI);       | export const PI = 3.14
 // 原生 node 不支援 import ，用 npx babel-node 跑程式
 // export {} 另一種用法(export{} 非 object) + 使用別名 (as)
 import {addfunc as a, PI} from './utils'  | add(a, b) { return a+b}
-
+                                          |
 console.log(a(3,5), PI);                  | const PI = 3.14
                                           | export {add as addfunc , PI}
 // import  * as，一次引用 module 所有內容，'*':代表所有東西
@@ -143,8 +144,19 @@ import * as utils from'./utils'
 console.log(utils.addfunc(3,5), utils.PI);
 // export default 直接將預設函式 inport，不用加{}在外面
 import add, {PI} from './utils' | export default function add(a, b) { return a+b}
-
+                                |
   console.log(add(3,5), PI);    | export const PI = 3.14
 // add, {PI} 也可寫成 {default as add, PI}
 ```
-10. `Babel`
+10. `Babel`:為 JavaScript 一種的 compiler
+    * 將新的語法轉成舊的語法，以提供對舊的瀏覽器的支援度
+    * 前端的開發速度大於瀏覽器開發速度，所以要提供更多工具支援
+    * eg: ES6/7/8 => Babel => ES5/4/3
+11. Babel 設定步驟
+    * [安裝說明](https://babeljs.io/docs/en/next/babel-node.html)
+    1. 安裝必要套件:`npm install --save-dev @babel/core @babel/node @babel/preset-env` (preset-env:設定語法)
+    2. 新增 `.babelrc` (用touch .babelrc)
+    3. 填入內容，告訴 babel 要用這個 preset:`{ "presets":["@babel/preset-env"]}`
+    4. 這些都要放在根目錄底下，與 package.json 同層
+    4. 最後使用 `npx babel-node 檔案名` 即可
+11. jkljklfd
