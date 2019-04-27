@@ -17,7 +17,7 @@ test('測試名稱', function(){
   expect(測試項目).toBe(期望測試的結果);
   })
 ```
-6. `test('test name',function(){})`:可依需求加
+6. `test('test name',function(){})`:可依需求加，test可換成 it
 7. `describe('test name',function(){test, test, ...})`: 將同類型的 test 包裝起來
 8. test 為 unit test :一個一個測試
 ***

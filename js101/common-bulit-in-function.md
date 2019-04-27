@@ -11,10 +11,11 @@
 7. `Math.floor()`: 回傳無條件捨去後的最大整數 floor
 8. `Math.round()`: 回傳四捨五入後的近似值
 9. `Math.sqrt()` : 開根號
-10. `Math.max() `: 回傳最大值
-11. `Math.min() `: 回傳最小值
-12. `Math.pow(base, exponent)`: 開次方
-13. `Math.random()`: 產生 0-1 區間的隨機數(含 0 ，不含 1)
+10. `Math.abs()` : 絕對值
+11. `Math.max() `: 回傳最大值
+12. `Math.min() `: 回傳最小值
+13. `Math.pow(base, exponent)`: 開次方
+14. `Math.random()`: 產生 0-1 區間的隨機數(含 0 ，不含 1)
     * eg. `Math.floor((Math.random()*10+1))`: 產生 1-10的隨機數
 ***
 

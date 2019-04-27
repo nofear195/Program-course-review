@@ -20,7 +20,8 @@
 ## npm script
 1. 在 package.json 中可找到
   * "scripts":{ "代號(別名)":"執行動作"}
-  * "scripts":{ "star":"node index.js"}
+  * "scripts":{ "test":"jest"} // 執行 jest 在所有含有 test 檔名的檔案 (hw1.test.js)
+  * "scripts":{ "test":"jest hw1 test.js"} // 只用 jest 執行單一檔案 (hw1.test.js)
 2. 在 npm 使用某個指令時，會自動執行的動作(腳本)
    * eg: `npm run star`
 ***
@@ -31,7 +32,7 @@
 3. `yarn -v`:yarn 版本號
 4. `yarn`: 效果等同於 `npm install`
 5. `yarn add left-pad`: 效果等同於 `npm install left-pad --save`
-6. `yarn run start`: 效果等同於 `npm run start`
+6. `yarn run start`: 效果等同於 `npm run test`
 7. `yarn init`: 效果等同於 `npm init`
 8. (https://yarnpkg.com/zh-Hant/docs/usage)
 9. 新的專案常用 yarn，速度較快
