@@ -22,9 +22,9 @@
 2. 基於 JavaScript 的物件所產生的一個資料格式
 3. 與 JavaScript 相容性極高，最為直覺
 4. 內容看起來與 JavaScript Object 相似，但有其規範
-5. key & value 皆放在 " " 內  
-object           | JSON
-{name: 'hello'}  | {"name": "hello"}
+5. key & value 皆放在 " " 內
+   * object : { name :'hello'} 
+   * JSON   : {"name": "hello"}
 6. 資料大小因為沒有標籤，所以比 XML 小
 7. `JSON.parse(str)`: 將 JSON 格式的字串轉為 JavaScript 的 object
 8. `JSON.stringify(object)`:將 JavaScript 的 object 轉為 JSON 格式的字串

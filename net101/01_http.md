@@ -17,7 +17,7 @@
 2. Body : 放主要內容
 3. requset & response 都放著 Header & Body，分別帶著不同的資訊
 ***
-## HTTP request methodS
+## HTTP request methods
 [Reference  MDN](https://developer.mozilla.org/zh-TW/docs/Web/HTTP/Methods)
 1. `GET`: 使用於取得資料
 2. `POST`: 提交狀態
