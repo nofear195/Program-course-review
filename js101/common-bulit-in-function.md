@@ -1,8 +1,10 @@
 ## Number type
 [Reference](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Number)
 1. `Number(string)`: 字串轉數字
+   * `Number(undefined) === NaN`:在加法時易出錯
+   * `Number(arrA[i] || 0)`: 當 arrA[i] 為 undefined 可用預設值設值回傳為 0
 2. `.toString()`: 數字轉字串
-    * eg. a.toString or 用 (a + '') 轉字串
+   * eg. a.toString or 用 (a + '') 轉字串
 3. `parseInt(string,index)`: 解析成整數
    * index: 表進位，default:10 進位，為 optional)
 4. `parseFloat(float number)`: 解析成浮點數
@@ -13,6 +15,7 @@
 9. `Math.sqrt()` : 開根號
 10. `Math.abs()` : 絕對值
 11. `Math.max() `: 回傳最大值
+    * `Math.max(a, b)`:回傳 a、b 誰大
 12. `Math.min() `: 回傳最小值
 13. `Math.pow(base, exponent)`: 開次方
 14. `Math.random()`: 產生 0-1 區間的隨機數(含 0 ，不含 1)
@@ -42,8 +45,9 @@
    * eg. 'Blue Whale'.indexOf('Whale', 7); // returns -1
 7. `var newStr = str.replace(regexp|substr, newSubstr|function)`: 取代字串
    * 因為 replace 不會更改原字串，所以要用新的變數 assign
-   * \[substr\]: 只找第一個符合的字串取代
-   * \[regexp\]: 正規表達式，(語法: /substr/gi g:global)，找所有符合的字串並取代
+   * str.replace(a,b) === (口語意思) replace a with b
+   * substr: 只找第一個符合的字串取代
+   * regexp: 正規表達式，(語法: /substr/gi g:global)，找所有符合的字串並取代
 8. `str.split([separator[, limit]])`； 將字串切成 array
    * separator: 用甚麼來分字串( , or '' or...)，default不切，optional
    * limt: 切到第幾串
@@ -118,3 +122,5 @@
 11. `Array(a).fill(b)`:產生 a 個元素的陣列，將陣列每個元素都填 b
 12. `Array.isArray(value)` : 判斷 value 是否為 Array
     * 回傳值為 true，則 value 為 Array，否則為 false
+13. `Array.reverse()`: 反轉陣列
+    * `str.split('').reverse().join('')`:反轉字串
