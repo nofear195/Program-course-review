@@ -22,7 +22,7 @@
 ## 登入功能 (tool: session & cookie)
 1. 登入功能:
    1. 瀏覽登入網頁，發送 Request
-   2. Server 生到回應，回應 request
+   2. Server 收到回應，回應 request
    3. Browser parse Response，出現登入頁面
    4. 填入帳號密碼，送出
    5. Browser 送出 Request，並且帶有帳號密碼
