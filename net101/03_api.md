@@ -14,17 +14,28 @@
 ***
 ## 串接 HTTP API 實戰
 1. (https://reqres.in): 提供測試用的 API
-2. 使用 node.js 內建 library: `request`、`process`
-3. 串接 API 只要讀懂相關文件，再發出 request，即可得到相對應的 response
+2. 使用 node.js 內建 library: `request`、`process` (都需先 npm install)
+3. `process`: npm 內建 library，用於提取輸入的參數
+4. `process.argv[i]`: 輸入參數的第幾位內容，argv (argument variable)
+5. 串接 API 只要讀懂相關文件，再發出 request，即可得到相對應的 response
+6. (https://www.npmjs.com/package/request)
 ```JavaScript
 const request = require('request');
+const process = require('process');
 
+console.log(process.argv);
+//呈現一個陣列對應 node file.js 3
+/*
+[ 'C:\\Program Files\\nodejs\\node.exe', ==> node
+  'C:\\Users\\CS7565\\Desktop\\file.js', ==> file.js
+  '3' ==> 3 ]
+*/
 request(
-  'https://reqres.in/api/users/2',
+  'https://reqres.in/api/users/' + process.argv[2],
+  // node file.js 3  => id 為3 的 user
   function (error, response, body) {
     console.log(body);
   }
   );
-//跑 node index.js 即可得當返回的資料
-//在網址後面加入 '/id' 在跑 node index.js，即可得 ID 的值
+//跑 node index.js 即可得當返回的資料，為 JSON 格式
 ```

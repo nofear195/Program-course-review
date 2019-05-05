@@ -26,7 +26,7 @@ const request = require('request');
 
 request.delete(
   'https://reqres.in/api/users/2',
-  fuction (err, response, body) {
+  function (err, response, body) {
     console.log(response.statusCode);
     // 204，表示成功刪除，body空了，沒有東西回傳
   }
