@@ -50,6 +50,8 @@
    * regexp: 正規表達式，(語法: /substr/gi g:global)，找所有符合的字串並取代
 8. `str.split([separator[, limit]])`； 將字串切成 array
    * separator: 用甚麼來分字串( , or '' or...)，default不切，optional
+   * separator = ''，(將字串每個字用','分開)，eg:[a cap] => [a,c,a,p]
+   * separator = ' '，(中間有空格，將有空格處用','分開)，eg:[a cap] => [a,cap]
    * limt: 切到第幾串
    * 常用。方便處理字串
 9. `str.trim()`: 去掉字串前後空格，不影響源自串
