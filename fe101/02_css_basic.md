@@ -13,6 +13,13 @@
       * `href="./style.css"`: CSS 檔案位置，通常在同一位置可用" ./檔名 "
       * 最常做使用，方便修改、維護
 4. Google chrome 的 devtool 可幫助進行除錯
+5. CSS Naming
+   * 當元素越來越多的時候，需要有一種規則的命名方法
+   1. BEM (Block Element Modifier) : 同一block同一命名+ __ +不同副標
+   2. block_element--modifier
+6. reset.css vs normalize.css
+   * reset.css : 針對所有標籤的樣式清空，保證在所有瀏覽器呈現樣式都相同，為了在瀏覽器上的支援
+   * normalize.css: 正規化，目的是取代 reset.css，試著跟隨瀏覽器的樣式，盡可能各瀏覽器上看起來一致
 ***
 ## CSS selector
 1. 選取所有元素:`* {attribute: value;}`，universal selectors
@@ -36,6 +43,7 @@
    * debug 時可用 chrome 的 devtool => Elements => Styles => :hov => Force element state 檢視
    * `:nth-child(number)`，取第幾個元素，( )內可用 odd/even、3n(倍數)、簡單的數學式
    * eg: .v span:nth-child(3){attribute: value;}，選取順序是由後往前(先看數字再看標籤)
+   * `:not(元素)`: 除了指定元素外，做{attribute: value;}
    * (https://developer.morzilla.org/en-US/docs/Web/CSS/Pesudo-classes)
 8. Pesudo-elements
    * 用 CSS 產生元素
@@ -101,7 +109,7 @@
    * `margin 上下 左右;`: 一次設定上下、左右的 margin 大小
 5. 文字相關
    * `color: 顏色;`
-   * `font-size: 大小;`: 文字大小
+   * `font-size: 大小;`: 文字大小，chrome: font-size 最小定在12px
    * `font-weight: 粗細`: 文字粗細，有 normal、bold、100 - 900
    * `font-family: 字體`
    * `letter-spacing: 間距大小`:字的距離
@@ -112,6 +120,8 @@
    * `word-break: break-all;`: 文字長度到寬度大小，即自動換行
    * `word-break: break-word;`: 文字長度到寬度大小，換行時保留完整單字
    * `white-space: nowrap;`: 將超出寬度的文字保留在同一行，不要換行
+   * `white-space: pre;`: 保留在 html 時的樣子
+   * `white-space: pre-line;`: 保留原本的換行
 6. 處理溢出: overflow、text-overflow
    * `overflow: hidden;`: 將超出寬度的元素截斷，並隱藏
    * `overflow: scroll;`: 將超出寬度的元素整個變成可以滾動的區域，設定 auto 會自動判定
@@ -164,8 +174,8 @@
 2. `box-sizing: border-box;`: 將 padding、border 寬高納入設定寬高，自動調整內容寬高，不改變整體寬高
 3. display 三種形式: {display: value;}
    1. `{display: block;}`:
-      * 預設元素為 block 的有 div, h1, p ...，元素本身占滿一整行
-      * 特性: 做任何調整皆可
+      * 預設元素為 block 的有 div, h1, p ...
+      * 特性: 元素本身占滿一整行，做任何調整皆可
    2. `{display: inline;}`:
       * 預設元素為 inline 的有 span, a
       * 特性: 調整寬高無效，上下邊距無效
@@ -176,17 +186,35 @@
       * 預設元素為 inline-block 的有 button, input, select ...
       * 特性: 對外像 inline 可並排，對內像 block 可調整各種屬性
       * 與 block 差別在於 inline-box 可以並排
+      * inline-block 並排時的小陷阱: block 的間距會因為 html 元素的空格，使得即使刪去 css margin 的設定，依舊存在間距
+      ```
+      <div>
+      </div>
+      <div> // 此行<div>與上方的</div> 有空格
+      </div>
+      // solution 1: 縮排
+      <div>
+      </div><div>
+      </div>
+      // solution 2: 加入註解
+      <div>
+      </div><!--
+      --><div>
+      </div>
+      ```
+    4. `{display: flex}`: 將底下的元素排成一左一右並排
 ***
 ## Position (定位)
 1. static、relative
    * `position: static;`: 預設值，依照 display 形式，依序定位排列
    * `position: relative;`: 相對定位，依原本位置做調整，只改變自身位置
-   *  relative 可用 top、right、 bottom、left 調整
+   * relative 可用 top、right、 bottom、left 調整
 2. absolute、fixed
    * `position: absolute;`: 絕對定位，需針對某個參考點定位
-   *  absolute 參考點即往上找非 static 定位的元素
-   *  absolute 會將原本元素的位置抽去，下個元素會依序遞補原本元素位置
+   * absolute 參考參考定位點即往上找非 static 的元素進行定位
+   * absolute 參考定位點設 relative
+   * absolute 會將原本元素的位置抽去，下個元素會依序遞補原本元素位置
    * `position: fixed;`: 固定定位，相對於 viewport (瀏覽器窗口)做定位去固定
 3. 決定圖層前後定位: z-index
    * `z-index: n;`: 預設值為 auto， n: 從 0 開始往上
-4. `position: sticky;`: 當往上滑動元素至小於 top 設定值，則為像 relative 固定在上方
+4. `position: sticky;`: 當往上滑動元素至小於 top 設定值，則似 relative 固定在上方

@@ -111,3 +111,17 @@
 3. `<` 替換成 `&lt;` (less than)
 4. `>` 替換成 `&gt;` (greater than)
 5. eg: `<meta /> ==> &lt;meta /&gt;`
+***
+## 切版
+1. 用 div 把東西包裹起來，可以將元素變成一個視覺上的區塊，方便管理
+1. 將版面用`<div class=" ">`切割一個個大區塊，在向下細分成一個個的小區塊
+   ```
+   <div class="post">
+      <div class="post__header"> // 用 __ (兩底線)命名較佳，較不會重複
+      </div>
+      <div class="post__option">
+      </div>
+   </div>
+   <div class="preview">
+   </div>
+   ```
