@@ -182,7 +182,7 @@
       * 用 margin 只能改變元素間距
       * 用 padding 調整寬度可改變元素間距
       * 用 padding 調整高度不影響元素位置，仍會依元素為中心，上下撐開元素
-   3. `{display: inline-box;}`:
+   3. `{display: inline-block;}`:
       * 預設元素為 inline-block 的有 button, input, select ...
       * 特性: 對外像 inline 可並排，對內像 block 可調整各種屬性
       * 與 block 差別在於 inline-box 可以並排
@@ -203,6 +203,8 @@
       </div>
       ```
     4. `{display: flex}`: 將底下的元素排成一左一右並排
+    5. `{display: none}`:隱藏元素與其位置
+       * `{visibility: hidden}`:只隱藏元素，仍保留位置空間
 ***
 ## Position (定位)
 1. static、relative
@@ -212,9 +214,15 @@
 2. absolute、fixed
    * `position: absolute;`: 絕對定位，需針對某個參考點定位
    * absolute 參考參考定位點即往上找非 static 的元素進行定位
-   * absolute 參考定位點設 relative
+   * absolute 參考定位點可設成 relative
    * absolute 會將原本元素的位置抽去，下個元素會依序遞補原本元素位置
    * `position: fixed;`: 固定定位，相對於 viewport (瀏覽器窗口)做定位去固定
 3. 決定圖層前後定位: z-index
    * `z-index: n;`: 預設值為 auto， n: 從 0 開始往上
 4. `position: sticky;`: 當往上滑動元素至小於 top 設定值，則似 relative 固定在上方
+***
+## RWD
+1. 前置作業:在`<head></head>`內加入
+   * `<meta name="viewport" content="width=device-width, initial-scale=1.0">`
+2. 斷點 (breakpoint) 格式:`@media screen and (max-width: XX px) { css}`
+3. 常用 max-width: 1200px, 992px, 768px, 680px, 480px

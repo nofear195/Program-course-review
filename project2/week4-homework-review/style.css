@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+}
+.main-block {
+    margin-top: 50px;
+    bockground: #E9FAFF;
+}
+.main-block h1 {
+    font-size: 72px;
+    margin: 20px 0px;
+}
+.btn {
+    color: white;
+    background: grey;
+    padding: 10px 15px;
+    display: inline-block;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.btn:hover {
+    background: #333;
+}
+.btn-main {
+    background: #1F7EF2;
+    padding: 15px 30px;
+}
+.btn-main:hover {
+    background: #1654a0;
+}
+.row {
+    display: flex;
+}
+.col ~ .col {
+    margin-left: 10px;
+}
+.footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+    padding-top: 20px;
+}
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 10px;
+}
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #1F2835;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0px 10px;
+    height: 60px;
+}
+.nav__title {
+    font-size: 20px;
+}
+.nav__list {
+    display: flex;
+    padding:0;
+    list-style: none;
+    margin-left: 10px;
+}
+.nav__item {
+    margin-left: 10px;
+    color: grey;
+    transition: all 0.3s;
+}
+.nav__item:hover {
+    cursor: pointer;
+    color: white;
+}
+@media screen and (max-width: 768px) {
+    .row {
+        flex-wrap: wrap;
+    }
+    .col:not(:first-child) {
+        margin-left: 0px;
+        margin-top: 20px;
+    }
+}

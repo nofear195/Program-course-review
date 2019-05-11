@@ -9,6 +9,8 @@
 1. `let / const`: 宣告變數
    * 用法與原 var 一樣
    * const (constant): 常數，用在不想改變的值，只有用物件、陣列可以改值
+   * let 不能重複宣告
+   * 兩者皆沒有 hoisting 性質
 ```JavaScript
 const obj = { a:1}
 obj.a =10 // obj = {a:10} 儲存記憶體位置不變
