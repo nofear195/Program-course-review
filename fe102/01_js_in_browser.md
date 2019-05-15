@@ -16,12 +16,13 @@
       * 兩者為不同的執行環境，在支援度上有所不同
       * eg: node.js 上 `require('')` 用法，在 borwser 不支援
 2. DOM，Document Object Model
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/DOM-model.svg/800px-DOM-model.svg.png" width="70%" height="70%" alt="DOM" align="center">
+
    * 是 html、xml 和 SVG 文件的程式介面
    * 可以理解成把 Document 轉換成 Object，有階層的結構
    * DOM 為 borwser 與 JS 之間的橋樑，讓 JS 可以與 browser 做溝通
    * JS 可以透過 DOM 取得元素，並改變元素
-     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/DOM-model.svg/800px-DOM-model.svg.png" width="70%" height="70%" alt="DOM" align="center">
-
 3. 選取想要的元素，getElement
    * document 為 browser 提供的特殊物件，並將很多的 function 放在 document 上
    * 因為這些元素都是放在 document 上，所以接續`document.`後面使用
@@ -86,7 +87,6 @@
 3. 事件傳遞機制: 捕獲與冒泡
 
    <img src="https://www.w3.org/TR/DOM-Level-3-Events/images/eventflow.svg" width="100%" height="500px" alt="event dispatch and DOM event flow" align="center">
-
 
    * capture
    * jkljk
