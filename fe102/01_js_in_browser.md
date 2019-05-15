@@ -17,7 +17,7 @@
       * eg: node.js 上 `require('')` 用法，在 borwser 不支援
 2. DOM，Document Object Model
 
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/DOM-model.svg/800px-DOM-model.svg.png" width="70%" height="70%" alt="DOM" align="center">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/DOM-model.svg/800px-DOM-model.svg.png" width="50%" height="50%" alt="DOM" align="center">
 
    * 是 html、xml 和 SVG 文件的程式介面
    * 可以理解成把 Document 轉換成 Object，有階層的結構
@@ -30,7 +30,7 @@
    * `document.getElementsByClassName('')`: 獲取所有此 class 的元素
    * `document.getElementById('')`: 獲取所有此 id 的元素
    * `document.querySelector('')`； 獲取第一個符合 css selector name 內的元素
-   * `document.querySelectorAll('')`:選取所有符合 css selector name 內的元素
+   * `document.querySelectorAll('')`:選取所有符合 css selector name 內的元素，回傳一個 list，可以當成陣列使用
 4. 改變元素的 CSS
    1. `變數.style.屬性='屬性值'`: eg: element.style.background='red'
       * "style." 後方屬性內容不可含有 "-"，即 JS 內 object 的用法
@@ -84,13 +84,27 @@
         })
    </scrtpt>
    ```
-3. 事件傳遞機制: 捕獲與冒泡
+3. DOM 事件傳遞機制: 捕獲與冒泡
 
    <img src="https://www.w3.org/TR/DOM-Level-3-Events/images/eventflow.svg" width="100%" height="500px" alt="event dispatch and DOM event flow" align="center">
 
-   * capture
-   * jkljk
-   * kljkld
+   * 先捕獲，在冒泡
+   * 在 DOM 內的元素因為有了上下階層的關係，所以在事件觸發後，會先由根節點往下傳遞至目的地 (觸發處) 再回傳至根節點
+   * Capture pharse: 捕獲階段，即由根節點往下傳遞至觸發處的過程
+   * Target pharse: 目標階段，觸發處
+   * Bubbling pharse: 冒泡階段，即由除發處往上傳遞至根節點的過程
+   * `addEventListener('event name', callback function, boolen)`
+     * 若 boolen = true，則可將 addEventListener 掛在 Capture pharse 上
+     * 若 boolen = false，則可將 addEventListener 掛在 Bubbling pharse 上，為預設值
+     * 在 Target pharse 中，則會以掛載先後順序顯示其階段
+   * `window.addEventListener('click', function(e){ e.preventDefault()}, true)`
+     * 在 window (root) 或 Capture pharse 任一過程中 ，呼叫 preventDefault 其效果會一直傳遞至 Target pharse，使其掛在捕獲階段的效果失效，最後在頁面上的效果完全失效
+   * 阻止事件傳遞: `e.stopPropagation()`，只觸發本身事件，後面其他事件不傳遞、不觸發
+   * `window.addEventListener('click', function(e){ e.stopPropagation()}, true)`
+     * 在 window (root) 直接阻止其他事件觸發
+   * `e.stopImmediatePropagation()`，只觸發本身事件，立刻阻止後面其他事件傳遞、觸發
+     * 因為一個元素可放進多個 addEventListener 同時觸發事件，所以可用於限制觸發單一事件
+   * [DOM 的事件傳遞機制：捕獲與冒泡](https://blog.techbridge.cc/2017/07/15/javascript-event-propagation/)
 4. dlkfl;kl
 5. dfkdl;fk'sdfkdl
 6. kd;lfk
