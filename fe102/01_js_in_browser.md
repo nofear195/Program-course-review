@@ -85,7 +85,7 @@
    ```
 3. 事件傳遞機制: 捕獲與冒泡
 
-   <img src="https://www.w3.org/TR/DOM-Level-3-Events/images/eventflow.svg" width="100%" height="50%" alt="event dispatch and DOM event flow" align=center>  
+   <img src="https://www.w3.org/TR/DOM-Level-3-Events/images/eventflow.svg" width="80%" height="50%" alt="event dispatch and DOM event flow" align=center>  
 
 
    * capture
