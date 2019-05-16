@@ -71,7 +71,7 @@
     * `method="傳送方式"`: 表單傳送資料的方法，分為兩種
       1. GET: 為預設值，前往 action 指定的網址，並將表單中的資料直接附在網址之後
          * 網址與資料之間用 "?" 分割，多個欄位資料用 " & " 串聯
-      2. POST: 前往 action 指定位置，並將表單中的資料放置在 HTTP 表頭進行傳遞
+      2. POST: 前往 action 指定位置，並將表單中的資料放置在 HTTP 表頭 (body 內) 進行傳遞
     * `<input type=" " />`: 表格的輸入框，常見的 type 有
       1. type="text": 純文字
       2. type="submit": 提交按鈕，後面可加 `value=" "`，修改按鈕的內容
@@ -88,7 +88,11 @@
       </div>
       ```
       7. type="checkbox":多選框，後面內容與 radio 相同
-      8. [more input types](https://developer.mozilla.org/en-US/docs/Web/HTML/Elements/input)
+      8. 用 label 標籤優化介面，點擊字體時可點擊到 input 方框內
+         * `<input type="checkbox" id="en"/><label for="en">英文</label>`
+           (指定 label 給 en 使用)
+         * `<label><input type="checkbox"/>英文</label>` (用 label 直接包裹 input)
+      9. [more input types](https://developer.mozilla.org/en-US/docs/Web/HTML/Elements/input)
 ***
 ## SEO
 1. Search Engine Optimization，搜尋引擎優化
