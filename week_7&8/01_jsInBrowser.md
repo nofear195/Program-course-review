@@ -253,13 +253,13 @@
    * 通常用於儲存短暫的資訊
 ***
 ## 網頁與伺服器的溝通
-1. review:
+#### review:
 
    ![clint-server](https://i.stack.imgur.com/uKIb7.png)
    * browser 發出一個 GET request 至連結，其 Server 回傳一個 response，browser 再 render 出頁面
    * request、response 格式可為 .html 檔案或 JSON 格式的檔案
    * 可以在 dev tool -> Network 看到所有情形
-2. node.js 與 瀏覽器上的 JS 根本的差異
+#### node.js 與 瀏覽器上的 JS 根本的差異
 
    ![node.js](./nodejs.png)
    * node.js 直接發出 request 至 Server 中間沒有任何干擾
@@ -269,8 +269,9 @@
    * 瀏覽器上的 js 透過瀏覽器，瀏覽器發出 request 至 server
    * Server 透過瀏覽器，瀏覽器回傳 response 至瀏覽器上的 js
    * 用瀏覽器上的 js 會被瀏覽器規則限制
-   * 瀏覽器的規則限制: 制止做一些事情、加一些東西，eg；額外資訊、版本
-3. 透過表單 form 傳資料
+   * 瀏覽器的規則限制: 為了安全而制止做一些事情、加一些東西，eg；資料存取、額外資訊、版本、
+#### 傳送資料的方式
+1. Form (表單)
    * 步驟:
      1. 利用表單傳 request 至 server
      2. server 回傳 response 至 browser
@@ -279,4 +280,98 @@
    * method = GET，參數會附加在網址上面
    * method = POST，參數會放在 body 內，常用於保護登入時輸入的帳號密碼
    * 可以在 dev tool -> Network ，點選 Preserve log 按鈕查看
-4. df
+   * 缺點: 每次與 Server 交換新的資料都須換頁
+   * 改善方法: 若不想換頁，只想改變頁面部分畫面 (非同步)，則可透過 JS 交換資料，即 AJAX
+2. AJAX (Asynchronous JavaScript And XML)
+   * 泛指任何非同步跟 Server 交換資料的 JS 皆可稱之
+   * 同步: 一次一件事情，不能同時做很多東西 ; 非同步: 可以同時做很多東西
+   * "XML"為早期使用的資料格式，現在多為 JSON 格式
+   * 與表單差異:
+     * 表單: browser 直接 render response
+     * AJAX: browser 非直接 render response，而是回傳給瀏覽器上的 JS
+   * 若要使用 AJAX，則需使用 browser 所提供的東西，eg: XMLHttpRequest() (簡寫:xhr)
+   *  XMLHttpRequest 範例 :
+   ```javascript
+   <body>
+   <div class='app'></div>
+   <script>
+      const request = new XMLHttpRequest()
+      // 產生 (new) 一個 XMLHttpRequest，XMLHttpRequest() : 為 browser 提供的 class
+
+      request.onload = function() {
+        if (request.status >= 200 && request.status < 400) {
+          console.log(request.responseText)
+        } else {
+          console.log(request.status, request.responseText)
+        }
+      }
+
+      /*
+        request.onload = function(){} 寫法
+        相當於將
+        btn.addEventListener('click', function(){}) 寫成
+        btn.onClick = function(){} (為概念，但實際上無法使用這種寫法)
+
+        當然也可以改用 addEventListener 寫
+          request.addEventListener('load', function() {
+            if (request.status >= 200 && request.status < 400) {
+              console.log(request.responseText)
+            } else {
+            console.log(request.status, request.responseText)
+            }
+          })
+
+        request.responseText : 回傳的文字內容，不一定每個 response 皆有
+                               有可能只回傳 statuscode 以及 {} (空的 body)
+      */
+
+      request.onerror = function() {
+        console.log('error')
+      }
+      // request.onerror : 當 request 有 error 時，執行的 function
+
+      request.open('GET', 'https://reqres.in/api/users', true)
+
+      /*
+        request.open(method, url, 非同步與否 ) : 發 request 到這個地方
+        在 browser執行 JS 在發 request 基本上為非同步
+        url 有受 CORS 規範，其 request 資源的 response header
+        是否包含 "Access-Control-Allow-Origin" 來決定我們是否可以存取
+      */
+
+      request.send() // 最後將 request 傳送出去
+
+      /*
+         在 Network 的 Header 看 request、response
+         在 Console 看回傳結果，回傳結果為純文字，需用 json parse 才能對結果做事
+
+      */
+
+   <script>
+   </body>
+   ```
+3. JSONP (JSON with padding(填充) ) (補充、目前少被使用)
+   * 利用不受同源政策的標籤 (script)，達到存取資料的目的
+   * 方法: 藉由在 script loading js 內的一個 function 將 data 傳入，之後在原本的 code 上定義這個 function 在 loading 完成後即可以拿到 data
+   * 不受同源政策的標籤； `<img src="" /> <scitp src=""></script>`
+   * 這些不受同源政策的標籤大多是因為因為沒有安全疑慮或方便使用
+   * AJAX 一定受同源政策的管理
+#### 其他
+1. Same-origin Policy (同源政策)
+   * 可理解成相同 domian (網域) 就是同源，用 http 存取 https 為不同源，反之亦然
+   * browser 若偵測到不同源，則預設會將 request 擋掉，可用 CORS 解決
+   * [輕鬆理解Ajax 與跨來源請求](https://blog.techbridge.cc/2017/05/20/api-ajax-cors-and-jsonp/)
+   * [MDN 同源政策 ](https://developer.mozilla.org/zh-TW/docs/Web/Security/Same-origin_policy)
+2. CORS (Cross-Origin Resource Sharing, CORS, 跨來源資源共用)
+   * 規範:
+     1. response 方 (Server): 在 response header 內增加一個 "access-control-allow-origin:" 的 header，其內容則為限制哪些來源的人可以存取這個 API 的 response，
+     2. request 方 (client): 發送 request 時，browser 自動在 request header 內加上 "origin: url" 的 Header，其內容則為 request 方現在的 domian，供 response 決定來源存取的權限
+     3. 若 server 未添加 "access-control-allow-origin:" 的 header client 絕對無法拿到 response，為 browser 為了安全而添加的限制
+   * [MDN CORS](https://developer.mozilla.org/Zh-TW/docs/Web/HTTP/CORS)
+3. Same-origin Policy 與 CORS 的設置
+   * borwser 為了安全性的考量
+   * 兩者只與 browser 有關，即脫離 browser 則沒有任何限制，eg: 用 nodejs 執行
+4. 單向傳送資料的延伸應用: email 與 追蹤
+   * 在 email 內放入一個極小或是透明的 img，eg: 1*1px，在收信者打開 email 後，其開 email 的軟體為了要顯現出附加進去的圖片，則會去 loading img 的網址，進而向網址端的 Server 發送 request，而 Server 便可由 request 數量統計開啟信封的人數
+   * 通常使用於開啟 emial 的數量統計、廣告的追蹤
+5. 綜合示範: [抓取資料並顯示](./demo_getDataAndDisplay.md)
