@@ -375,3 +375,4 @@
    * 在 email 內放入一個極小或是透明的 img，eg: 1*1px，在收信者打開 email 後，其開 email 的軟體為了要顯現出附加進去的圖片，則會去 loading img 的網址，進而向網址端的 Server 發送 request，而 Server 便可由 request 數量統計開啟信封的人數
    * 通常使用於開啟 emial 的數量統計、廣告的追蹤
 5. 綜合示範: [抓取資料並顯示](./demo_getDataAndDisplay.md)
+6. [RESTful API Design by TritonHo](https://github.com/TritonHo/slides/blob/master/Taipei%202016-04%20talk/RESTful%20API%20Design-tw-2.1.pdf)
