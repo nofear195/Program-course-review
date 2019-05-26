@@ -5,6 +5,8 @@
 4. 使用 API，存取對方的資料
 5. 提供 API，讓對方依照自己定義去存取指定的資料，可以有效進行控
 6. 在電腦上存取檔案，便是由 OS 所提供的 API
+7. [什麼是 API？](https://www.youtube.com/watch?v=zvKadd9Cflc)
+8. [什麼是API，接口？](https://www.youtube.com/watch?v=Pbx4elFAXR0)
 ***
 ## API 與 WebAPI
 1. 提供 API 不一定要由網路，而 WebAPI 則一定是從網路
