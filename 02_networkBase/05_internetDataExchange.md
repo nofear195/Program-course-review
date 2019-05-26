@@ -8,7 +8,8 @@
 ***
 ## RESTful
 1. 不是一個協定，只是一個 "風格"
-2. 建議網址的使用對應其 HTTP request methods
+2. 透過 JSON 進行資料交換
+3. 建議網址的使用對應其 HTTP request methods
 
 說明  |request method   |對應網址(舊)|對應網址(新)
 --|---|---|--
