@@ -65,6 +65,9 @@
    * 可以連結到網頁外面的位置與網頁內部的位置(網頁導覽)
    * 連結到網頁內部時，需將連結的目標設置 `id=" "`，本身設置 href="#id內容"
 10. 語意化標籤: Semantic elements，便於判讀
+
+      <img src="https://www.w3schools.com/html/img_sem_elements.gif"  alt="Semantic elements" align="center">
+
     * (https://developer.mozilla.org/en-US/docs/Glossary/Semantics)
     * (https://www.w3schools.com/html/html5_semantic_elements.asp)
     * `<main></main>`: 包裹網頁重要內容
@@ -130,10 +133,11 @@
 ***
 ## 切版
 1. 用 div 把東西包裹起來，可以將元素變成一個視覺上的區塊，方便管理
-1. 將版面用`<div class=" ">`切割一個個大區塊，在向下細分成一個個的小區塊
+2. 將版面用`<div class=" ">`切割一個個大區塊，在向下細分成一個個的小區塊
+3. 用 __ (兩底線)命名 class 較佳，較不會重複
    ```
    <div class="post">
-      <div class="post__header"> // 用 __ (兩底線)命名較佳，較不會重複
+      <div class="post__header"> 
       </div>
       <div class="post__option">
       </div>
