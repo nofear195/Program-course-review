@@ -11,10 +11,16 @@
 6. `<!DOCTYPE HTML>`:宣告使用最新 HTML 格式
 7. HTML 基本組成: `<html>、<head>、<body>`
    ```
+   <!DOCTYPE HTML>
    <html>
       <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link  rel="stylesheet" href="./style.css"/>
       </head>
       <body>
+       <div>content</div>
+       <script src="./index.js"></script>
       </body>
    </html>
    ```
