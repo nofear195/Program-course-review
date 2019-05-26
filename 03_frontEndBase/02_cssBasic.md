@@ -88,7 +88,7 @@
    * `border: 大小, 類型, 顏色;`， 類型 (boder-style) 常用 solid (實線)
    * `border-radius: 大小`:邊角弧度
    * 利用 border 畫圖形:
-     * 圓形: `border-radius: 50px(50$)`，半徑各縮 50% 即為圓形
+     * 圓形: `border-radius: 50px(50%)`，半徑各縮 50% 即為圓形
      * border 四邊的範圍從梯形最高可至三角形
      * 三角形
      ```
@@ -205,7 +205,8 @@
       </div>
       ```
     4. `{display: flex}`: 將底下的元素排成一左一右並排
-       * [Flex Froggy](http://flexboxfroggy.com/)
+       * [Flexbox Froggy](http://flexboxfroggy.com/)
+       * [Flexbox Froggy](./review_FlexboxFroggy.md)
     5. `{display: none}`:隱藏元素與其位置
        * `{visibility: hidden}`:只隱藏元素，仍保留位置空間
 ***
