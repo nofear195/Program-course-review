@@ -206,7 +206,7 @@
       ```
     4. `{display: flex}`: 將底下的元素排成一左一右並排
        * [Flexbox Froggy](http://flexboxfroggy.com/)
-       * [Flexbox Froggy](./review_FlexboxFroggy.md)
+       * [Flexbox Froggy review](./review_FlexboxFroggy.md)
     5. `{display: none}`:隱藏元素與其位置
        * `{visibility: hidden}`:只隱藏元素，仍保留位置空間
 ***
