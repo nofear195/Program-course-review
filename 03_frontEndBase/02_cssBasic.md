@@ -64,7 +64,7 @@
    * 以上都敵不過 inline style，(1, 0, 0, 0)，eg: style="attribute: value;"
    * 權重最大 `!important`，(1, 0, 0, 0, 0)，放在 value 後面
    * `!important`，會覆蓋所有樣式，盡量少用
-10. [Css Diner](https://flukeout.github.io/)
+10. [CSS Diner](https://flukeout.github.io/)
 ***
 ## CSS decoration {attribute: value;}
 1. color : 通常設定採用 RGB、RGBA，其方式如下
