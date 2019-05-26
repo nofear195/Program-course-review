@@ -64,6 +64,7 @@
    * 以上都敵不過 inline style，(1, 0, 0, 0)，eg: style="attribute: value;"
    * 權重最大 `!important`，(1, 0, 0, 0, 0)，放在 value 後面
    * `!important`，會覆蓋所有樣式，盡量少用
+10. [Css Diner](https://flukeout.github.io/)
 ***
 ## CSS decoration {attribute: value;}
 1. color : 通常設定採用 RGB、RGBA，其方式如下
@@ -203,6 +204,7 @@
       </div>
       ```
     4. `{display: flex}`: 將底下的元素排成一左一右並排
+       * [Flex Froggy](http://flexboxfroggy.com/)
     5. `{display: none}`:隱藏元素與其位置
        * `{visibility: hidden}`:只隱藏元素，仍保留位置空間
 ***
