@@ -29,3 +29,4 @@
 7. `JSON.parse(str)`: 將 JSON 格式的字串轉為 JavaScript 的 object
 8. `JSON.stringify(object)`:將 JavaScript 的 object 轉為 JSON 格式的字串
 9. 任何資料格式在任何語言內都可處理對應格式的 library，而 JSON 最常被使用
+10. (https://github.com/Lidemy/mentor-program-3rd/tree/master/examples/week4)
