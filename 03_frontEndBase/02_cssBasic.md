@@ -44,7 +44,7 @@
    * `:nth-child(number)`，取第幾個元素，( )內可用 odd/even、3n(倍數)、簡單的數學式
    * eg: .v span:nth-child(3){attribute: value;}，選取順序是由後往前(先看數字再看標籤)
    * `:not(元素)`: 除了指定元素外，做{attribute: value;}
-   * (https://developer.morzilla.org/en-US/docs/Web/CSS/Pesudo-classes)
+   * (https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
 8. Pesudo-elements
    * 用 CSS 產生元素
    * `::before{ content:value;}`，eg: .price::before{content: "$"} // $1000
@@ -54,7 +54,7 @@
    * `data-`: html 內自定義元素ˋ，eg: data-id="hello yoyo" 放入標籤元素內
    * eg: .price::after{ content: attr(data-id);} // 1000 hello yoyo
    * Pesudo-element 內 "content:" 不可略
-   * (https://developer.morzilla.org/en-US/docs/Web/CSS/Pesudo-elements)
+   * (https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements)
 9. 權重 (weight) 計算方式
    * 權重相同，以後面設定為優先，前面設定會被覆蓋
    * 權重大小: id > class > 標籤，越詳細的贏
