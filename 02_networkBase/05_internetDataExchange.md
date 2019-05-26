@@ -2,7 +2,7 @@
 1. Simple Object Access Protocal (SOAP)
 2. 除了 API 外，其中一種與 Server 進行溝通的方式
 2. 透過 XML 進行資料交換
-3. (https://soap.org/learn/api/soap-vs-rest-api.html)
+3. (https://www.soapui.org/learn/api/soap-vs-rest-api.html)
 4. (https://github.com/vpulim/node-soap)
 5. 大部分的分類: SOAP 與 SOAP 以外的 HTTP API，但還有更多的 Protocal 進行資料交換，也可以自訂義資料格式
 ***
