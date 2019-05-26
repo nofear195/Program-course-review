@@ -20,7 +20,9 @@
 更改使用者 |~~POST~~ => PATCH | /update_user | /users/:id
 ***
 ## API 串結實戰 again
-1. (https://github.com/request/request)-> request.METHOD()
+1. request.METHOD()
+   * (https://github.com/request/request)
+   * (https://stackabuse.com/the-node-js-request-module/)
 2. (https://reqres.in)
 ```JavaScript
 const request = require('request');
