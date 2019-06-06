@@ -9,6 +9,7 @@
 
         ![Relational database terminology](https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Relational_database_terms.svg/1920px-Relational_database_terms.svg.png)
        ![行（屬性Attribute）和列（值組Tuple）的形式](https://upload.wikimedia.org/wikipedia/commons/8/8d/Relational_model_concepts.png)
+       
        SQL term | Relational database term| Description
        ---------|-------------------------|------------
        Table    | Relation or Base relvar | 行與列的集合
