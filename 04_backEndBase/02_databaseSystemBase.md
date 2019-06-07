@@ -1,15 +1,22 @@
 ## 資料庫系統簡介
-1. database system vs Server
+1. 來源、需求: Server 需要有個地方可以永久保存資料
+2. database system vs Server
    * database system => 程式，專門處理資料的程式
    * Server => 程式，專門處理 request 與 response 的程式
-2. 主要價值: 提供方便的介面、指令、語法供使用者作資料的操作與存取
-3. 優點: 較傳統的存取檔案的方式更方便、更有效率、更好維護
+3. 主要價值: 提供方便的介面、指令、語法供使用者作資料的操作與存取
+4. 優點: 較傳統的存取檔案的方式更方便、更有效率、更好維護
+5. Excel 也是一種資料庫，一個儲存資料的地方
+6. 專有名詞對照 Excel => database system
+   * 檔案 => Database
+   * Tab (頁籤) => table
+   * 欄位 => column
+   * 與 Excel 操作差異: database system 是用指令去操控 database ( eg: SQL、NoSQL)
 4. 種類:
    1. Relational database，關聯式資料庫:
 
         ![Relational database terminology](https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Relational_database_terms.svg/1920px-Relational_database_terms.svg.png)
        ![行（屬性Attribute）和列（值組Tuple）的形式](https://upload.wikimedia.org/wikipedia/commons/8/8d/Relational_model_concepts.png)
-       
+
        SQL term | Relational database term| Description
        ---------|-------------------------|------------
        Table    | Relation or Base relvar | 行與列的集合
@@ -22,10 +29,9 @@
       * SQL (Structured Query Language): 關聯性資料庫語言
       * 適用於大多情形
       * 將之實作的有: MySQL、PostgreSQL、MSSQL
-      * 同類型的資料庫主要功能、概念大同小異
+      * 同類型的資料庫其主要功能、概念大同小異
    2. NoSQL (Not only SQL)
       * 相較於傳統 SQL 固定的儲存型態，存在一些限制，NoSQL 會將一個物件儲存像是 JSON、Object 形式，以彈性換取固定結構的概念
       * 適用於東西繁多、瑣碎且不連續的情形，eg: log(日誌)
       * 將之實作的有: MongoDB
       * (https://zh.wikipedia.org/wiki/NoSQL)
-## jkljlk
