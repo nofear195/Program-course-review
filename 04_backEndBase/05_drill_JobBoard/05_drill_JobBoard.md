@@ -30,7 +30,7 @@
  * (4) link, VARCHAR(512)
  * created_at, datatime, CURRENT_TIMESTAMP
 
-   ![Schema](./schema.png =850x)
+   ![Schema](./schema.png)
 ### 實作前端頁面
  先製作靜態頁面，之後再串接資料
  * 前台:
